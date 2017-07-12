@@ -712,9 +712,11 @@ void Operate::layoutxlsx(int GetYear, int GetMonth)
 	app.put_Visible(TRUE);
 	app.put_UserControl(FALSE); 
 	pStrFileName.Format(_T("%s"), szPath);
+	app.put_DisplayAlerts(FALSE); //阻止SaveAs方法无效弹窗
 	book.SaveAs(COleVariant(pStrFileName +"\\"+Firstday + ".xlsx"), covOptional, covOptional,
 		covOptional, covOptional, covOptional, 0,
-		covOptional, covOptional, covOptional, covOptional, covOptional, covOptional); 
+		covOptional, covOptional, covOptional, covOptional, covOptional, covOptional); //覆盖写入
+	app.put_DisplayAlerts(TRUE);
 }
 
 /***********************************************************************
