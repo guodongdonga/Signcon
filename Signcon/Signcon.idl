@@ -1,0 +1,29 @@
+// Signcon.idl : Signcon.exe 的类型库源
+
+// 此文件将由 MIDL 编译器处理以产生
+// 类型库(Signcon.tlb)。
+
+[ uuid(ACF617B3-E63D-4D40-83B1-D79159CADC48), version(1.0) ]
+library Signcon
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  CSignconDoc 的主调度接口
+	
+	[ uuid(F0E1103C-2440-4CB2-92B6-21473992F8FF) ]
+	dispinterface ISigncon
+	{
+		properties:
+			
+		methods:
+	};
+
+	//  CSignconDoc 的类信息
+	
+	[ uuid(66649C91-23BC-4858-9F53-13527F73FB22) ]
+	coclass Signcon
+	{
+		[default] dispinterface ISigncon;
+	};
+};

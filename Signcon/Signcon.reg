@@ -1,0 +1,17 @@
+REGEDIT
+; 此 .REG 文件可能由 SETUP 程序使用。
+;   如果 SETUP 程序不可用，则以下条目将
+;   CWinApp::RegisterShellFileTypes 和 COleObjectFactory::UpdateRegistryAll
+;   在 InitInstance 中对下列项自动进行注册。
+
+
+HKEY_CLASSES_ROOT\Signcon.Application = Signcon Application
+
+
+HKEY_CLASSES_ROOT\Signcon.Application\CLSID = {66649C91-23BC-4858-9F53-13527F73FB22}
+
+HKEY_CLASSES_ROOT\CLSID\{66649C91-23BC-4858-9F53-13527F73FB22} = Signcon Application
+HKEY_CLASSES_ROOT\CLSID\{66649C91-23BC-4858-9F53-13527F73FB22}\ProgId = Signcon.Application
+
+
+HKEY_CLASSES_ROOT\CLSID\{66649C91-23BC-4858-9F53-13527F73FB22}\LocalServer32 = Signcon.EXE
