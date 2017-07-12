@@ -66,7 +66,6 @@ int Operate::Readfile()
 				vstr = conv.UTF8ToUnicode(str);
 				str = conv.UnicodeToANSI(vstr);
 			}
-			//AfxMessageBox(str);
 			//读取的信息进行分解
 			No = str.Mid(0, 6);
 			Mchn = str.Mid(7, 1);
@@ -121,7 +120,6 @@ int Operate::Savetosql(CString No, CString Mchn, CString EnNo, CString Name, CSt
 	str = "INSERT INTO signoridata VALUES(" + No + "," + Mchn + "," + EnNo + ",\"" + Name + "\",\"" + Year + "-" + Month + "-" + Day + "\",\"" + Hour + ":" + Minute + ":" + "00\")";
 	mysql_query(&m_sqlCon, str);
 	count += mysql_affected_rows(&m_sqlCon);//返回操作影响的行数  
-											//AfxMessageBox(str);
 	mysql_close(&m_sqlCon);//关闭Mysql连接
 	return 1;
 }
@@ -138,17 +136,13 @@ int Operate::Savetosql(CString No, CString Mchn, CString EnNo, CString Name, CSt
 int Operate::Checkuser(CString EnNo, CString Name)
 {
 	st_mysql_res *  res;
-	//mysql_free_result(res);
-	//AfxMessageBox(EnNo);
 	if (mysql_real_query(&m_sqlCon, "select Name from user where EnNo = " + EnNo, (unsigned long)strlen("select Name from user where EnNo = " + EnNo)))// 查询数据库中的"signoridata"表  
 	{
-		//AfxMessageBox("get");
 		return 0;
 	}
 	res = mysql_store_result(&m_sqlCon);//得到存储结果集 
 	if (NULL == res)//如果出错空则返回
 	{
-		//AfxMessageBox("space");
 		return 0;
 	}
 	CString out;
@@ -186,7 +180,6 @@ int Operate::Checkuser(CString EnNo, CString Name)
 int Operate::Exec(int pointer)
 {
 	AfxMessageBox("接下来进行数据预处理与整理，请耐心等待，这可能需要一点时间。");
-	//AfxMessageBox(_T("数据库测试"));
 	ConnectMySQL();
 	CString str;
 	CString tempNo, tempDate, tempTime;
@@ -323,8 +316,7 @@ CString Operate::GetWeek(CString str)
 	while (row = mysql_fetch_row(res)) //行数据集为row
 	{
 		CString myreaddata(row[0]);//读row rols列
-		Week = myreaddata;//
-						  //AfxMessageBox(Week);
+		Week = myreaddata;
 	}
 	mysql_free_result(res);
 	mysql_close(&m_sqlCon);//关闭Mysql连接
@@ -539,7 +531,6 @@ void Operate::layoutxlsx(int GetYear, int GetMonth)
 			range = sheet.get_Range(COleVariant(Namecl), COleVariant(Namecl));//range定制范围
 			Merge(sheet, Namecl, Namecle);
 			FillOne(sheet, Namecl, Getname);
-			//AfxMessageBox(Getname);
 			for (int t = 0; t < 4; t++)//填充早午晚合计
 			{
 				CString Filler, Filler2, Fillin;
@@ -597,7 +588,6 @@ void Operate::layoutxlsx(int GetYear, int GetMonth)
 				uday.Format("%d", tday);
 				ConnectMySQL();
 				sqltemp = "SELECT * from preprocess where EnNo = " + Getno + " and Weekno = " + Weekno + " and week = " + uday;
-				//AfxMessageBox(sqltemp);
 				int Getnoi = atoi(Getno);
 				if (mysql_real_query(&m_sqlCon, sqltemp, (unsigned long)strlen(sqltemp)))// 查询数据库中的""表  
 				{
@@ -610,7 +600,6 @@ void Operate::layoutxlsx(int GetYear, int GetMonth)
 					return;
 				}
 				CString pStrIntervalFunc = "=TEXT((AND(MST<>\"\",MEN<>\"\")*(MEN-MST)+AND(NST<>\"\",NEN<>\"\")*(NEN-NST)+AND(EST<>\"\",EEN<>\"\")*(EEN-EST)),\"[h]:mm\")";
-				//AfxMessageBox(pStrIntervalFunc);
 				while (rowtemp = mysql_fetch_row(restemp)) //行数据集为row
 				{
 					for (int temp = 4; temp < 10; temp++)

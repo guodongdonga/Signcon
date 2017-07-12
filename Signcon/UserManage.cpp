@@ -99,7 +99,6 @@ void UserManage::OnBnClickedDel()
 	// TODO: 在此添加控件通知处理程序代码
 	int iPosition = m_userlist.GetSelectionMark();
 	CString pStritem = m_userlist.GetItemText(iPosition,0);
-	//AfxMessageBox(pStritem);
 	m_userlist.DeleteItem(iPosition);
 	Operate op;
 	CString pStrsql;
@@ -115,7 +114,6 @@ void UserManage::OnBnClickedDelanddeldata()
 	// TODO: 在此添加控件通知处理程序代码
 	int iPosition = m_userlist.GetSelectionMark();
 	CString pStritem = m_userlist.GetItemText(iPosition, 0);
-	//AfxMessageBox(pStritem);
 	m_userlist.DeleteItem(iPosition);
 	Operate op;
 	CString pStrsql;

@@ -100,7 +100,6 @@ void BrowserByUserDlg::OnBnClickedOk()
 	// TODO: 在此添加控件通知处理程序代码
 	int iPosition = m_userlist.GetSelectionMark();
 	CString pStritem = m_userlist.GetItemText(iPosition, 0);
-	//AfxMessageBox(pStritem);
 	Operate op;
 	CString pStrsql;
 	op.ConnectMySQL();
