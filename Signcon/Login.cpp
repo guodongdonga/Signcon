@@ -7,10 +7,9 @@
 #include "afxdialogex.h"
 #include "Operate.h"
 #include "mysql.h"
-// Login 对话框
-
 extern MYSQL m_sqlCon;
 
+// Login 对话框
 IMPLEMENT_DYNAMIC(Login, CDialogEx)
 
 Login::Login(CWnd* pParent /*=NULL*/)

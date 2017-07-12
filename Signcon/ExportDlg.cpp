@@ -56,7 +56,6 @@ void ExportDlg::OnBnClickedOk()
 BOOL ExportDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
 	// TODO:  在此添加额外的初始化
 	UpdateData(TRUE);
 	GetDlgItem(IDC_EDIT1)->SetWindowTextA("2016");//为文本框填上默认值。

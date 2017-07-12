@@ -73,7 +73,6 @@ void AdminDlg::OnBnClickedOk()
 BOOL AdminDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
 	// TODO:  在此添加额外的初始化
 	CString pStrip, pStrdatabase, pStruser, pStrpassword, pStrport,pStrtolerate;
 	int nSize = 254;

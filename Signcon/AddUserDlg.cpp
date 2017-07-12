@@ -8,7 +8,6 @@
 #include "Operate.h"
 #include "mysql.h"
 extern MYSQL m_sqlCon;
-
 // AddUserDlg ¶Ô»°¿ò
 
 IMPLEMENT_DYNAMIC(AddUserDlg, CDialogEx)

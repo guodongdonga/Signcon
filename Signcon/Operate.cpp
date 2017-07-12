@@ -572,12 +572,10 @@ void Operate::layoutxlsx(int GetYear, int GetMonth)
 					Merge(sheet, "O" + Filler2, "P" + Filler2);
 				}
 				range.put_Value2(COleVariant(Fillin));	//填入早午晚
-
 			}
 			//memnum++;
 			//接下来应该根据数据库来按照本月第一周，读取一周内的情况，每个月也就4个周
 			//已知信息 no。week号，第一天，查询当天的数据
-
 			Weekno = GetWeek(Daystart);
 			int vWeekno = atoi(Weekno);//将这个月开始的周号转换为int
 			vWeekno = vsheet + vWeekno;
@@ -639,7 +637,6 @@ void Operate::layoutxlsx(int GetYear, int GetMonth)
 							pRealLocate.Format("%d", memnum * 4 + 4);
 							pStrIntervalFunc.Replace("NST", GetRealCol(uday, temp) + pRealLocate);
 							FillOne(sheet, GetRealCol(uday, temp) + pRealLocate, N);
-
 						}
 						if (temp == 7)
 						{

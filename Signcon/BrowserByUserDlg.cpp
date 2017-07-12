@@ -54,7 +54,6 @@ BOOL BrowserByUserDlg::OnInitDialog()
 	Operate op;
 	CString pStrsql;
 	op.ConnectMySQL();
-
 	pStrsql = "select * FROM user";
 	if (mysql_real_query(&m_sqlCon, pStrsql, (unsigned long)strlen(pStrsql)))// 查询数据库中的""表  
 	{
@@ -105,7 +104,6 @@ void BrowserByUserDlg::OnBnClickedOk()
 	Operate op;
 	CString pStrsql;
 	op.ConnectMySQL();
-
 	pStrsql = "select * from signoridata where enno = "+ pStritem;
 	if (mysql_real_query(&m_sqlCon, pStrsql, (unsigned long)strlen(pStrsql)))// 查询数据库中的""表  
 	{
@@ -117,7 +115,6 @@ void BrowserByUserDlg::OnBnClickedOk()
 	{
 		return ;
 	}
-
 	UpdateData(TRUE);
 	MYSQL_ROW row;
 	int iIndex = 0;

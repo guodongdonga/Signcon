@@ -41,7 +41,6 @@ END_MESSAGE_MAP()
 BOOL BrowserDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
 	// TODO:  在此添加额外的初始化
 	m_listbrowser.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);      // 整行选择、网格线  
 	m_listbrowser.InsertColumn(0, _T("流水号"), LVCFMT_LEFT, 50);
@@ -49,7 +48,6 @@ BOOL BrowserDlg::OnInitDialog()
 	m_listbrowser.InsertColumn(2, _T("EnNo"), LVCFMT_LEFT, 100);        // 插入第3列的列名  
 	m_listbrowser.InsertColumn(3, _T("姓名"), LVCFMT_LEFT, 80);        // 插入第4列的列名  
 	m_listbrowser.InsertColumn(4, _T("签到时间"), LVCFMT_LEFT, 150);        // 插入第5列的列名  
-
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 异常: OCX 属性页应返回 FALSE
 }
@@ -64,7 +62,6 @@ void BrowserDlg::OnBnClickedOk()
 	Operate op;
 	CString pStrsql;
 	op.ConnectMySQL();
-
 	pStrsql = "select * FROM signoridata where Date = \"" + pStrSerchdate + "\"";
 	if (mysql_real_query(&m_sqlCon, pStrsql, (unsigned long)strlen(pStrsql)))// 查询数据库中的""表  
 	{
@@ -76,7 +73,6 @@ void BrowserDlg::OnBnClickedOk()
 	{
 		return ;
 	}
-
 	UpdateData(TRUE);
 	MYSQL_ROW row;
 	int iIndex = 0;

@@ -48,15 +48,13 @@ BOOL UserManage::OnInitDialog()
 	m_userlist.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);      // 整行选择、网格线  
 	m_userlist.InsertColumn(0, _T("EnNo"), LVCFMT_LEFT, 70);
 	m_userlist.InsertColumn(1, _T("姓名"), LVCFMT_LEFT, 100);        // 插入第2列的列名  
-
 	CString pStrSerchdate;
 	//ori数据库中查询对应日期的所有数据
 	Operate op;
-	CString str;
+	CString pStrsql;
 	op.ConnectMySQL();
-
-	str = "select * FROM user";
-	if (mysql_real_query(&m_sqlCon, str, (unsigned long)strlen(str)))// 查询数据库中的""表  
+	pStrsql = "select * FROM user";
+	if (mysql_real_query(&m_sqlCon, pStrsql, (unsigned long)strlen(pStrsql)))// 查询数据库中的""表  
 	{
 		return 0;
 	}
@@ -66,11 +64,10 @@ BOOL UserManage::OnInitDialog()
 	{
 		return 0;
 	}
-
 	UpdateData(TRUE);
 	MYSQL_ROW row;
 	int iIndex = 0;
-	m_userlist.DeleteAllItems();
+	m_userlist.DeleteAllItems();//清空列表数据
 	while (row = mysql_fetch_row(res)) //行数据集为row
 	{
 		m_userlist.InsertItem(iIndex, NULL);
@@ -91,10 +88,6 @@ BOOL UserManage::OnInitDialog()
 		iIndex++;
 	}
 	UpdateData(false);
-
-
-
-
 	// TODO:  在此添加额外的初始化
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 异常: OCX 属性页应返回 FALSE
@@ -109,11 +102,10 @@ void UserManage::OnBnClickedDel()
 	//AfxMessageBox(pStritem);
 	m_userlist.DeleteItem(iPosition);
 	Operate op;
-	CString str;
+	CString pStrsql;
 	op.ConnectMySQL();
-
-	str = "DELETE FROM USER where EnNo =\""+pStritem+"\"";
-	mysql_query(&m_sqlCon, str);
+	pStrsql = "DELETE FROM USER where EnNo =\""+pStritem+"\"";
+	mysql_query(&m_sqlCon, pStrsql);
 	mysql_close(&m_sqlCon);//关闭Mysql连接
 }
 
@@ -126,14 +118,14 @@ void UserManage::OnBnClickedDelanddeldata()
 	//AfxMessageBox(pStritem);
 	m_userlist.DeleteItem(iPosition);
 	Operate op;
-	CString str;
+	CString pStrsql;
 	op.ConnectMySQL();
-	str = "DELETE FROM USER where EnNo =\"" + pStritem + "\"";
-	mysql_query(&m_sqlCon, str);
-	str = "DELETE FROM signoridata where EnNo =\"" + pStritem + "\"";
-	mysql_query(&m_sqlCon, str);
-	str = "DELETE FROM preprocess where EnNo =\"" + pStritem + "\"";
-	mysql_query(&m_sqlCon, str);
+	pStrsql = "DELETE FROM USER where EnNo =\"" + pStritem + "\"";
+	mysql_query(&m_sqlCon, pStrsql);
+	pStrsql = "DELETE FROM signoridata where EnNo =\"" + pStritem + "\"";
+	mysql_query(&m_sqlCon, pStrsql);
+	pStrsql = "DELETE FROM preprocess where EnNo =\"" + pStritem + "\"";
+	mysql_query(&m_sqlCon, pStrsql);
 }
 
 

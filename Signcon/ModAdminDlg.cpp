@@ -52,7 +52,5 @@ void ModAdminDlg::OnBnClickedOk()
 	pStrsql = "Insert into auth values(1,"+ pStrusername+","+ pStrpassword+",1)";
 	mysql_query(&m_sqlCon, pStrsql);
 	mysql_close(&m_sqlCon);//πÿ±’Mysql¡¨Ω”
-
-
 	CDialogEx::OnOK();
 }

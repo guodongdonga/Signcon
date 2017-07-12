@@ -53,9 +53,7 @@ BOOL CSignconApp::InitInstance()
 	// 公共控件类。
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);
-
 	CWinApp::InitInstance();
-
 
 	// 初始化 OLE 库
 	if (!AfxOleInit())
