@@ -58,7 +58,7 @@ void AdminDlg::OnBnClickedOk()
 	int itolerate = atoi(pStrtolerate);
 	if (itolerate < 1 || itolerate >59)
 	{
-		AfxMessageBox("数据不合法，请重新输入");
+		AfxMessageBox("数据不合法，请重新输入"); //限制时间在1-59之间
 		return;
 	}
 	::WritePrivateProfileString(_T("Database connection Info"), _T("IP"), _T(pStrip), _T("C:\\Program Files\\DBSetting.ini"));
@@ -85,7 +85,6 @@ BOOL AdminDlg::OnInitDialog()
 	GetPrivateProfileString("Database connection Info", "port", NULL, pStrport.GetBuffer(254), nSize, "C:\\Program Files\\DBSetting.ini");
 	GetPrivateProfileString("Database connection Info", "database", NULL, pStrdatabase.GetBuffer(254), nSize, "C:\\Program Files\\DBSetting.ini");
 	GetPrivateProfileString("Setting", "tolerate", NULL, pStrtolerate.GetBuffer(254), nSize, "C:\\Program Files\\DBSetting.ini");
-
 	m_dbaddress.SetWindowTextA(pStrip);
 	m_dbuser.SetWindowTextA(pStruser);
 	m_dbpassword.SetWindowTextA(pStrpassword);

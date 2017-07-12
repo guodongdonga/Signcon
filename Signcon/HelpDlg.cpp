@@ -42,6 +42,6 @@ void HelpDlg::OnBnClickedOk()
 	if (DeleteFile("C:\\Program Files\\DBSetting.ini"))
 	{
 		AfxMessageBox("重置完成，重启后即可重新配置");
-		PostMessage(WM_QUIT, 0, 0);
+		PostMessage(WM_QUIT, 0, 0);//关闭程序
 	}
 }
