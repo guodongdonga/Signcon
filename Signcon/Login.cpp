@@ -77,7 +77,6 @@ void Login::OnBnClickedLogin()
 	MYSQL_ROW row;
 	while (row = mysql_fetch_row(res)) //行数据集为row
 	{
-		CString colname;
 		CString pStrmyreaddata(row[0]);//读row rols列
 		if (pStrmyreaddata == password) {
 			AdminDlg admindlg;

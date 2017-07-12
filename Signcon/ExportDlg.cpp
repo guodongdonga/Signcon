@@ -43,11 +43,11 @@ void ExportDlg::OnBnClickedOk()
 	// TODO: 在此添加控件通知处理程序代码
 	Operate op;
 	int iYear, iMonth;
-	CString str;
-	m_year.GetWindowTextA(str);
-	iYear = atoi(str);
-	m_month.GetWindowTextA(str);
-	iMonth = atoi(str);
+	CString pStrstr;
+	m_year.GetWindowTextA(pStrstr);
+	iYear = atoi(pStrstr);
+	m_month.GetWindowTextA(pStrstr);
+	iMonth = atoi(pStrstr);
 	op.layoutxlsx(iYear, iMonth);
 	CDialogEx::OnOK();
 }

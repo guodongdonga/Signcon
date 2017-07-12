@@ -10,7 +10,6 @@
 **************************************************************************/
 #include "afxcmn.h"
 
-
 // UserManage ¶Ô»°¿ò
 
 class UserManage : public CDialogEx

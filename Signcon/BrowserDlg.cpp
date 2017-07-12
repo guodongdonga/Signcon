@@ -77,7 +77,7 @@ void BrowserDlg::OnBnClickedOk()
 		return ;
 	}
 
-	UpdateData(TRUE);//加上
+	UpdateData(TRUE);
 	MYSQL_ROW row;
 	int iIndex = 0;
 	m_listbrowser.DeleteAllItems();
@@ -112,5 +112,5 @@ void BrowserDlg::OnBnClickedOk()
 		}
 		iIndex++;
 	}
-	UpdateData(false);//加上
+	UpdateData(false);
 }

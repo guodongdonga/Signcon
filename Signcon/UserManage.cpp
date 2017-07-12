@@ -67,7 +67,7 @@ BOOL UserManage::OnInitDialog()
 		return 0;
 	}
 
-	UpdateData(TRUE);//加上
+	UpdateData(TRUE);
 	MYSQL_ROW row;
 	int iIndex = 0;
 	m_userlist.DeleteAllItems();
@@ -90,7 +90,7 @@ BOOL UserManage::OnInitDialog()
 		}
 		iIndex++;
 	}
-	UpdateData(false);//加上
+	UpdateData(false);
 
 
 

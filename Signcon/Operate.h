@@ -29,9 +29,9 @@ public:
 	int tolerate = 10;
 	int Exec(int pointer);
 	// 需要已经建立MYSQL连接
-	CString GetDay(CString str);
+	CString GetDay(CString pStrsql);
 	// 需要已经建立MySQL连接
-	CString GetWeek(CString str);
+	CString GetWeek(CString pStrsql);
 	int ConnectMySQL();
 	CString CheckTime(CString hour, CString minute);
 	void layoutxlsx(int GetYear, int GetMonth);

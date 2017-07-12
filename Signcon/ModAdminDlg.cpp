@@ -43,14 +43,14 @@ void ModAdminDlg::OnBnClickedOk()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	Operate op;
-	CString str,pStrusername,pStrpassword;
+	CString pStrsql,pStrusername,pStrpassword;
 	op.ConnectMySQL();
 	m_adminid.GetWindowText(pStrusername);
 	m_adminpassword.GetWindowText(pStrpassword);
-	str = "DELETE FROM auth";
-	mysql_query(&m_sqlCon, str);
-	str = "Insert into auth values(1,"+ pStrusername+","+ pStrpassword+",1)";
-	mysql_query(&m_sqlCon, str);
+	pStrsql = "DELETE FROM auth";
+	mysql_query(&m_sqlCon, pStrsql);
+	pStrsql = "Insert into auth values(1,"+ pStrusername+","+ pStrpassword+",1)";
+	mysql_query(&m_sqlCon, pStrsql);
 	mysql_close(&m_sqlCon);//关闭Mysql连接
 
 

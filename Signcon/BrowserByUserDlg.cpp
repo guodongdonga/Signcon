@@ -52,11 +52,11 @@ BOOL BrowserByUserDlg::OnInitDialog()
 	m_detaillist.InsertColumn(3, _T("机器号"), LVCFMT_CENTER, 70);
 	//ori数据库中查询对应日期的所有数据
 	Operate op;
-	CString str;
+	CString pStrsql;
 	op.ConnectMySQL();
 
-	str = "select * FROM user";
-	if (mysql_real_query(&m_sqlCon, str, (unsigned long)strlen(str)))// 查询数据库中的""表  
+	pStrsql = "select * FROM user";
+	if (mysql_real_query(&m_sqlCon, pStrsql, (unsigned long)strlen(pStrsql)))// 查询数据库中的""表  
 	{
 		return 0;
 	}
@@ -66,8 +66,7 @@ BOOL BrowserByUserDlg::OnInitDialog()
 	{
 		return 0;
 	}
-
-	UpdateData(TRUE);//加上
+	UpdateData(TRUE);
 	MYSQL_ROW row;
 	int iIndex = 0;
 	m_userlist.DeleteAllItems();
@@ -78,20 +77,19 @@ BOOL BrowserByUserDlg::OnInitDialog()
 		CString colname;
 		for (rols = 0; rols < 2; rols++)
 		{
-			CString myreaddata(row[rols]);//读row rols列
+			CString pStrmyreaddata(row[rols]);//读row rols列
 			if (rols == 0)
 			{
-				m_userlist.SetItemText(iIndex, 0, myreaddata);
+				m_userlist.SetItemText(iIndex, 0, pStrmyreaddata);
 			}
 			if (rols == 1)
 			{
-				m_userlist.SetItemText(iIndex, 1, myreaddata);
+				m_userlist.SetItemText(iIndex, 1, pStrmyreaddata);
 			}
-
 		}
 		iIndex++;
 	}
-	UpdateData(false);//加上
+	UpdateData(false);
 	mysql_close(&m_sqlCon);//关闭Mysql连接
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 异常: OCX 属性页应返回 FALSE
@@ -105,11 +103,11 @@ void BrowserByUserDlg::OnBnClickedOk()
 	CString pStritem = m_userlist.GetItemText(iPosition, 0);
 	//AfxMessageBox(pStritem);
 	Operate op;
-	CString str;
+	CString pStrsql;
 	op.ConnectMySQL();
 
-	str = "select * from signoridata where enno = "+ pStritem;
-	if (mysql_real_query(&m_sqlCon, str, (unsigned long)strlen(str)))// 查询数据库中的""表  
+	pStrsql = "select * from signoridata where enno = "+ pStritem;
+	if (mysql_real_query(&m_sqlCon, pStrsql, (unsigned long)strlen(pStrsql)))// 查询数据库中的""表  
 	{
 		return ;
 	}
@@ -120,7 +118,7 @@ void BrowserByUserDlg::OnBnClickedOk()
 		return ;
 	}
 
-	UpdateData(TRUE);//加上
+	UpdateData(TRUE);
 	MYSQL_ROW row;
 	int iIndex = 0;
 	m_detaillist.DeleteAllItems();
@@ -131,27 +129,27 @@ void BrowserByUserDlg::OnBnClickedOk()
 		CString colname;
 		for (rols = 0; rols < 6; rols++)
 		{
-			CString myreaddata(row[rols]);//读row rols列
+			CString pStrmyreaddata(row[rols]);//读row rols列
 			if (rols == 0)
 			{
-				m_detaillist.SetItemText(iIndex, 0, myreaddata);
+				m_detaillist.SetItemText(iIndex, 0, pStrmyreaddata);
 			}
 			if (rols == 1)
 			{
-				m_detaillist.SetItemText(iIndex, 3, myreaddata);
+				m_detaillist.SetItemText(iIndex, 3, pStrmyreaddata);
 			}
 			if (rols == 4)
 			{
-				m_detaillist.SetItemText(iIndex, 1, myreaddata);
+				m_detaillist.SetItemText(iIndex, 1, pStrmyreaddata);
 			}
 			if (rols == 5)
 			{
-				m_detaillist.SetItemText(iIndex, 2, myreaddata);
+				m_detaillist.SetItemText(iIndex, 2, pStrmyreaddata);
 			}
 		}
 		iIndex++;
 	}
-	UpdateData(false);//加上
+	UpdateData(false);
 	mysql_close(&m_sqlCon);//关闭Mysql连接
 	
 	//CDialogEx::OnOK();

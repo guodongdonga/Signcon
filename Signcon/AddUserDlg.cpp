@@ -55,10 +55,10 @@ void AddUserDlg::OnBnClickedOk()
 	m_enno.GetWindowTextA(pStrenno);
 	m_name.GetWindowTextA(pStrname);
 	Operate op;
-	CString str;
+	CString pStrsql;
 	op.ConnectMySQL();
-	str = "Insert into user values(\""+ pStrenno +"\",\""+pStrname+"\")";
-	mysql_query(&m_sqlCon, str);
+	pStrsql = "Insert into user values(\""+ pStrenno +"\",\""+pStrname+"\")";
+	mysql_query(&m_sqlCon, pStrsql);
 	AfxMessageBox("执行完成，重新打开用户管理页面即可更新");
 	CDialogEx::OnOK();
 }

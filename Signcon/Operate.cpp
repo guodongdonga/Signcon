@@ -10,7 +10,7 @@ Operate::Operate()
 {
 	CString  pStrtolerate;
 	int nSize = 254;
-	GetPrivateProfileString("Setting", "tolerate", NULL, pStrtolerate.GetBuffer(254), nSize, "C:\\Program Files\\DBSetting.ini");
+	GetPrivateProfileString("Setting", "tolerate", NULL, pStrtolerate.GetBuffer(254), nSize, "C:\\Program Files\\DBSetting.ini"); //配置文件中读取tolerate
 	tolerate = atoi(pStrtolerate);
 	pStrtolerate.ReleaseBuffer();
 }
@@ -32,7 +32,7 @@ int Operate::Readfile()
 	CFileDialog dlg(TRUE, "*.*", NULL, OFN_HIDEREADONLY, "*.*|*.*||");
 	CString csFileName;
 	CString str;
-	CString Out;
+//	CString pStrOut;
 	CString No;//指纹机自动生成的流水编号
 	CString Mchn;//指纹机编号
 	CString EnNo;//对应每个考勤人员的编号

@@ -16,9 +16,9 @@ public:
 	Convertstr();
 	~Convertstr();
 public:
-	wchar_t * ANSIToUnicode(const char* str);
-	char * UnicodeToANSI(const wchar_t *str);
-	wchar_t * UTF8ToUnicode(const char* str);
-	char * UnicodeToUTF8(const wchar_t *str);
+	wchar_t * ANSIToUnicode(const char* pStrsql);
+	char * UnicodeToANSI(const wchar_t *pStrsql);
+	wchar_t * UTF8ToUnicode(const char* pStrsql);
+	char * UnicodeToUTF8(const wchar_t *pStrsql);
 
 };

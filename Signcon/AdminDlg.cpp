@@ -15,7 +15,6 @@ IMPLEMENT_DYNAMIC(AdminDlg, CDialogEx)
 AdminDlg::AdminDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_ADMIN, pParent)
 {
-
 }
 
 AdminDlg::~AdminDlg()
@@ -68,7 +67,6 @@ void AdminDlg::OnBnClickedOk()
 	::WritePrivateProfileString(_T("Database connection Info"), _T("port"), _T(pStrport), _T("C:\\Program Files\\DBSetting.ini"));
 	::WritePrivateProfileString(_T("Setting"), _T("tolerate"), _T(pStrtolerate), _T("C:\\Program Files\\DBSetting.ini"));
 	CDialogEx::OnOK();
-
 }
 
 
@@ -92,7 +90,6 @@ BOOL AdminDlg::OnInitDialog()
 	m_dbdb.SetWindowTextA(pStrdatabase);
 	m_tolerate.SetWindowTextA(pStrtolerate);
 	return TRUE;  // return TRUE unless you set the focus to a control
-				  // 异常: OCX 属性页应返回 FALSE
 }
 
 
