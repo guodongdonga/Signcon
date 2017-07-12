@@ -1,4 +1,13 @@
 #pragma once
+/**************************************************************************
+* Copyright (c) 2017 damaowo.cn
+* File: Operate.h
+* Description : 操作类：包含了数据库连接、Excel填充单元格、合并单元格、导出Excel、文件读取、获取月、获取日等函数
+* modification history
+* --------------------
+* author: liang 2017-7-8
+* --------------------
+**************************************************************************/
 #include "CApplication.h" 
 #include "CWorkbook.h" 
 #include "CWorkbooks.h" 

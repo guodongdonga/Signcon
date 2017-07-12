@@ -52,7 +52,7 @@ void Login::OnBnClickedLogin()
 	m_password.GetWindowTextA(password);
 	if (pStrusername == "root") //当数据库配置修改错误时，会导致无法登陆，可使用root临时登陆
 	{
-		if(!PathFileExists("C:\\Program Files\\DBSetting.ini"))
+		if(!PathFileExists("C:\\Program Files\\DBSetting.ini"))//当配置文件不存在的时候，可以使用root账户进行登录
 		{ 
 		if (password == "SafePa$$Local")
 		{

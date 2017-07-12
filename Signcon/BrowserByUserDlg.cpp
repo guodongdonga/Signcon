@@ -40,7 +40,7 @@ END_MESSAGE_MAP()
 BOOL BrowserByUserDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
+	CString pStrSerchdate;
 	// TODO:  在此添加额外的初始化
 	m_userlist.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);      
 	m_userlist.InsertColumn(0, _T("EnNo"), LVCFMT_CENTER, 110);// 整行选择、网格线  
@@ -50,8 +50,6 @@ BOOL BrowserByUserDlg::OnInitDialog()
 	m_detaillist.InsertColumn(1, _T("日期"), LVCFMT_CENTER, 80);
 	m_detaillist.InsertColumn(2, _T("时间"), LVCFMT_CENTER, 80);
 	m_detaillist.InsertColumn(3, _T("机器号"), LVCFMT_CENTER, 70);
-	
-	CString pstrSerchdate;
 	//ori数据库中查询对应日期的所有数据
 	Operate op;
 	CString str;

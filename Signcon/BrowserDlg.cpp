@@ -58,14 +58,14 @@ BOOL BrowserDlg::OnInitDialog()
 void BrowserDlg::OnBnClickedOk()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	CString pstrSerchdate;
-	m_browserdate.GetWindowTextA(pstrSerchdate);
+	CString pStrSerchdate;
+	m_browserdate.GetWindowTextA(pStrSerchdate);
 	//ori数据库中查询对应日期的所有数据
 	Operate op;
 	CString pStrsql;
 	op.ConnectMySQL();
 
-	pStrsql = "select * FROM signoridata where Date = \"" + pstrSerchdate + "\"";
+	pStrsql = "select * FROM signoridata where Date = \"" + pStrSerchdate + "\"";
 	if (mysql_real_query(&m_sqlCon, pStrsql, (unsigned long)strlen(pStrsql)))// 查询数据库中的""表  
 	{
 		return ;

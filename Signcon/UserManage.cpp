@@ -49,7 +49,7 @@ BOOL UserManage::OnInitDialog()
 	m_userlist.InsertColumn(0, _T("EnNo"), LVCFMT_LEFT, 70);
 	m_userlist.InsertColumn(1, _T("姓名"), LVCFMT_LEFT, 100);        // 插入第2列的列名  
 
-	CString pstrSerchdate;
+	CString pStrSerchdate;
 	//ori数据库中查询对应日期的所有数据
 	Operate op;
 	CString str;

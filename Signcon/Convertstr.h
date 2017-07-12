@@ -1,4 +1,14 @@
 #pragma once
+/**************************************************************************
+* Copyright (c) 2017 damaowo.cn
+* File: Convertstr.h
+* Description : ANSI¡¢Unicode¡¢UTF-8Ö®¼ä×ª»»
+* modification history
+* --------------------
+* author: liang 2017-7-8
+* --------------------
+**************************************************************************/
+
 class Convertstr
 {
 public:

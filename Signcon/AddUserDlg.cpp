@@ -38,7 +38,16 @@ END_MESSAGE_MAP()
 
 // AddUserDlg 消息处理程序
 
-
+/***********************************************************************
+* DESCRIPTION:点击确定按钮后，添加新用户
+* Returns: void
+* modification history
+*
+* Guodongdonga	2017-7-12
+* --------------------
+* author: Liangshoupeng 2017-7-11
+* --------------------
+***********************************************************************/
 void AddUserDlg::OnBnClickedOk()
 {
 	// TODO: 在此添加控件通知处理程序代码

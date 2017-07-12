@@ -1,6 +1,15 @@
 #pragma once
 #include "afxwin.h"
-
+/**************************************************************************
+* Copyright (c) 2017 damaowo.cn
+* File: ExportDlg.h
+* Description : ExportDlg对话框类
+*				导出excel对话框
+* modification history
+* --------------------
+* author: liang 2017-7-8
+* --------------------
+**************************************************************************/
 
 // ExportDlg 对话框
 
