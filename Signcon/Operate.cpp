@@ -24,7 +24,7 @@ Operate::~Operate()
 * Returns: 是否成功读取
 * modification history
 * --------------------
-* author: Liangshoupeng 2017-7-11
+* author: XTB 2017-7-11
 * --------------------
 ***********************************************************************/
 int Operate::Readfile()
@@ -362,7 +362,7 @@ int Operate::ConnectMySQL()
 * Returns: 时间锁对应的签到点
 * modification history
 * --------------------
-* author: Liangshoupeng 2017-7-11
+* author: Chenxiongyu 2017-7-11
 * --------------------
 ***********************************************************************/
 CString Operate::CheckTime(CString hour, CString minute)//返回值是数据库的列名
@@ -403,7 +403,7 @@ CString Operate::CheckTime(CString hour, CString minute)//返回值是数据库的列名
 	{
 		return "EE";//合法的签退时间，m为实际签退分钟数
 	}
-	return "il";//return il 时间不合法
+	return "il";//return il 时间不合法illegal
 }
 
 /***********************************************************************
